@@ -15,8 +15,10 @@ class Sprite(pygame.sprite.Sprite):
 		self.surface = pygame.Surface([width, height])
 		self.image = pygame.image.load("space invaders player.png")
 		if self.image.get_alpha():
+			print("has alpha")
 			self.image.convert_alpha()
 		else:
+			print("doesnt have alpha")
 			self.image.convert(self.image)
 			self.surface.set_colorkey(colorKey)
 		pygame.draw.rect(self.image, color, pygame.Rect(0, 0, width, height))
